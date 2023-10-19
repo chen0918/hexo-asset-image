@@ -55,8 +55,10 @@ hexo.extend.filter.register('after_post_render', function(data){
             srcArray.shift();
             src = srcArray.join('/');
 
-            $(this).attr('src', config.root + link + src);
-            console.info&&console.info("update link as:-->"+config.root + link + src);
+            // $(this).attr('src', config.root + link + src);
+            // console.info&&console.info("update link as:-->"+config.root + link + src);
+            $(this).attr('src', data.permalink +src);
+            console.info&&console.info("update link as:-->" + src);
           }
         }else{
           console.info&&console.info("no src attr, skipped...");
